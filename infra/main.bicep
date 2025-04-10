@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-param location string = deployment().location
+param location string = 'southcentralus'
 
 @minLength(1)
 @maxLength(16)
