@@ -9,7 +9,9 @@ spec:
     kind: RunnerDeployment
   minReplicas: 1
   maxReplicas: 20
+  scaleDownDelaySecondsAfterScaleOut: 300
+
   metrics:
   - type: TotalNumberOfQueuedAndInProgressWorkflowRuns
     repositoryNames:
-    - github-runner-on-aks
+    - juang903/github-runner-on-aks
