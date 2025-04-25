@@ -1,17 +1,17 @@
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: HorizontalRunnerAutoscaler
 metadata:
-  name: example-runner-deployment-autoscaler
+  name: example-runnerdeploy-autoscaler
+  namespace: actions-runner-system
 spec:
   scaleTargetRef:
     # Your RunnerDeployment Here
-    name: actions-runner-system
+    name: example-runnerdeploy
     kind: RunnerDeployment
   minReplicas: 1
-  maxReplicas: 20
+  maxReplicas: 10
   scaleDownDelaySecondsAfterScaleOut: 300
-
   metrics:
-  - type: TotalNumberOfQueuedAndInProgressWorkflowRuns
-    repositoryNames:
-    - juang903/github-runner-on-aks
+    - type: TotalNumberOfQueuedAndInProgressWorkflowRuns
+      repositoryNames:
+        - juang903/github-runner-on-aks
