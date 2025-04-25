@@ -11,4 +11,4 @@ spec:
       #organization: <YOUR ORG NAME IF WANT TO WORK AT ORG LEVEL>  
       image: ghcr.io/juang903/github-runner-on-aks:main
       imagePullSecrets:
-      - name: ghcrsecret
+      - name: ghcrcredentials

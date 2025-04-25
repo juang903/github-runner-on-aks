@@ -54,7 +54,7 @@ jobs:
           kubectl apply -f ./runner/cert-manager.yaml
           kubectl create -f ./runner/actions-runner-controller.yaml 
           kubectl create secret generic controller-manager  -n actions-runner-system --from-literal=github_token=${{ secrets.RUNNER_TOKEN }}
-          kubectl create secret docker-registry ghcrsecret --docker-server=https://${{ env.REGISTRY }}/ --docker-username=${{ github.repository }} --docker-password=${{ secrets.RUNNER_TOKEN }}
+          kubectl create secret docker-registry ghcrcredentials --docker-server=https://${{ env.REGISTRY }}/ --docker-username=${{ github.repository }} --docker-password=${{ secrets.RUNNER_TOKEN }}
           sleep 90
           kubectl apply -f ./runner/runnerdeployment.yaml 
           kubectl apply -f ./runner/hra-scaler.yaml
