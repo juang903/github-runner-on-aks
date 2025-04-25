@@ -5,7 +5,7 @@ metadata:
 spec:
   scaleTargetRef:
     # Your RunnerDeployment Here
-    name: example-runnerdeploy
+    name: actions-runner-system
     kind: RunnerDeployment
   minReplicas: 1
   maxReplicas: 20
