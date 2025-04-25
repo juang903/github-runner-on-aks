@@ -1,0 +1,11 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: example-runner
+  namespace: actions-runner-system
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: juang903/github-runner-on-aks # Or use 'organization: your-org' if for org-wide
+      env: []
